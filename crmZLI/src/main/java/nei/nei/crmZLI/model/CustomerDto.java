@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CustomerDto implements Customer {
-	
 	public Long id;
 	public String name;
 	public ArrayList<Memo> memos;

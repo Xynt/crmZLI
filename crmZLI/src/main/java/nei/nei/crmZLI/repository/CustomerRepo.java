@@ -13,4 +13,10 @@ public interface CustomerRepo extends JpaRepository<CustomerImp, Long>{
 	public default List<Customer> findAllCustomers() {
 		return new ArrayList<Customer>(findAll());
 	}
+	
+	public Customer findCustomerByName(String name);
+	
+	public default Customer createCustomer(String name) {
+		return save(new CustomerImp(name));
+	}
 }

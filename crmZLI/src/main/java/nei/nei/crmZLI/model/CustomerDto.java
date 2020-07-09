@@ -33,4 +33,25 @@ public class CustomerDto implements Customer {
 		return memos;
 	}
 
+	@Override
+	public void addMemo(MemoImp m) {
+		memos.add(m);		
+	}
+
+	@Override
+	public Memo getMemo(Long id) {
+		for (Memo m : memos) {
+			if (m.getId() == id) {
+				return m;
+			}
+		}
+		return null;
+	}
+
+	/*
+	@Override
+	public void deleteMemo(Memo m) {
+		memos.remove(m);
+	}
+	*/
 }

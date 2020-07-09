@@ -5,6 +5,5 @@ import java.util.Date;
 public interface Memo {
 	Long getId();
 	Date getDate();
-	String getText();
-
+	String getValue();
 }

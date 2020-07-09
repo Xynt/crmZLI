@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -41,8 +42,11 @@ public class CustomerRestController {
 	
 	@PostMapping("/rest/customers")
 	public CustomerDto newCustomer(@RequestBody() CustomerDto customerDto) {
-		
 		return new CustomerDto(customerService.createCustomer(customerDto.name));
 	}
-
+	
+	@DeleteMapping("/rest/customers/{id}")
+	public void deleteCustomer(@PathVariable("id") Long id) {
+		customerService.deleteCustomer(id);
+	}
 }

@@ -25,7 +25,7 @@ public class CustomerServiceImp implements CustomerService {
 	public Customer createCustomer(String name) {
 		if (name != null) {
 			Customer existingCust = customerRepo.findCustomerByName(name);
-			if (existingCust != null) {
+			if (existingCust == null) {
 				return customerRepo.createCustomer(name);
 			}
 			throw new CustomerAlreadyExistsException(String.format("Name: %s", name));
@@ -35,12 +35,15 @@ public class CustomerServiceImp implements CustomerService {
 
 	@Override
 	public Customer getCustomerById(Long id) {
-		if (id != null) { // TODO 
+		if (id != null) {
 			return customerRepo.findById(id).orElseThrow(RuntimeException::new);
 		} 
 		throw new InvalidParamException(String.format("Invalid ID: %s", id));
 	}
-	
-	
-	
+
+	@Override
+	public void deleteCustomer(Long id) {
+		getCustomerById(id);
+		customerRepo.deleteCustomer(id);
+	}
 }

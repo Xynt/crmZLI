@@ -48,10 +48,9 @@ public class CustomerDto implements Customer {
 		return null;
 	}
 
-	/*
 	@Override
 	public void deleteMemo(Memo m) {
 		memos.remove(m);
+		
 	}
-	*/
 }

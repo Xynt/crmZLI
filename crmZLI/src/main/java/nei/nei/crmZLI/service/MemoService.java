@@ -8,5 +8,5 @@ public interface MemoService {
 	List<Memo> getAllMemos(Long customerId);
 	Memo createMemo(Long customerId, String value);
 	Memo getMemoById(Long customerId, Long id);
-	// void deleteMemo(Long customerId, Long id);
+	void deleteMemo(Long customerId, Long id);
 }

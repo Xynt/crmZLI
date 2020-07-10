@@ -8,5 +8,5 @@ public interface Customer {
 	List<Memo> getMemos();
 	void addMemo(MemoImp m);
 	Memo getMemo(Long id);
-	//void deleteMemo(Memo m);
+	void deleteMemo(Memo m);
 }

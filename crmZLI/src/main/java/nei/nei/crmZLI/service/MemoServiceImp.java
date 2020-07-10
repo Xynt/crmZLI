@@ -55,16 +55,18 @@ public class MemoServiceImp implements MemoService {
 		throw new InvalidParamException(String.format("Invalid ID: %s", id));
 	}
 
-	/*
 	@Override
 	public void deleteMemo(Long customerId, Long id) {
 		if (id != null) {
 			Memo m = getCustomer(customerId).getMemo(id);
 			if (m != null) {
 				getCustomer(customerId).deleteMemo(m);
+				memoRepo.deleteMemo(id);
+			} else {
+				throw new InvalidParamException(String.format("Invalid ID: %s", id));
 			}
+		} else {
+			throw new InvalidParamException(String.format("Invalid ID: %s", id));
 		}
-		throw new InvalidParamException(String.format("Invalid ID: %s", id));
 	}
-	*/
 }

@@ -35,10 +35,9 @@ public class MemoRestController {
 		return new MemoDto(memoService.createMemo(customerId, memoDto.getValue()));
 	}
 	
-	/*
-	@DeleteMapping("/rest/customers/{customerId}/memos")
+	
+	@DeleteMapping("/rest/customers/{customerId}/memos/{id}")
 	public void deleteMemo(@PathVariable("customerId") Long customerId, @PathVariable("id") Long id) {
 		memoService.deleteMemo(customerId, id);
 	}
-	*/
 }

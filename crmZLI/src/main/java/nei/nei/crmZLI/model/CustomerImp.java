@@ -20,7 +20,7 @@ public class CustomerImp implements Customer {
 	@OneToMany(
 	        mappedBy = "customer",
 	        targetEntity = MemoImp.class,
-	        cascade = CascadeType.ALL,
+	        cascade = CascadeType.REMOVE,
 	        orphanRemoval = true
 	    )
 	List<MemoImp> memos;
@@ -73,11 +73,9 @@ public class CustomerImp implements Customer {
 		}
 		return null;
 	}
-	
-	/*
+
 	@Override
 	public void deleteMemo(Memo m) {
-		memos.remove(m);
+		memos.remove(m);		
 	}
-	*/
 }
